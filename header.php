@@ -1,28 +1,48 @@
-<header class="card mb-5">
+<style>
+  .header {
+    background: #8d705a;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 0px 0px 10px 10px;
+  }
+  .navbar-light .navbar-brand {
+    color: rgba(255, 255, 255, 1);
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 1);
+  }
+</style>
+
+<header class="mb-5 header">
 <nav class="navbar navbar-expand-lg navbar-light bd-highlight">
   <div class="container">
    <a class="navbar-brand" href="/">
-    <img src="img/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
     Tower of babel
   </a>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <button class="navbar-toggler" type="button" data-target="#my-nav" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse">
+        <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="my-nav" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Главная</a>
+      <li class="nav-item">
+        <a class="nav-link" href="/"><img src="img/nav-icon/home.png" width="12" class="d-inline-block" alt="">
+        Главная <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="rating.php">Рейтинг</a>
+        <a class="nav-link" href="rating.php"><img src="img/nav-icon/rating.png" width="14" class="d-inline-block" alt="">
+        Рейтинг</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="mygame.php">Мои игры</a>
+        <a class="nav-link" href="mygame.php"><img src="img/nav-icon/mygame.png" width="14" class="d-inline-block" alt="">
+        Мои игры</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="achievement.php">Мои достижения</a>
+        <a class="nav-link" href="achievement.php"><img src="img/nav-icon/achievement.png" width="10" class="d-inline-block" alt="">
+        Мои достижения</a>
       </li>
     </ul>
     <a class="navbar-brand" href="profile.php">Мой профиль
-      <img src="img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="img/profile-icon-white.png" width="30" height="30" class="d-inline-block align-top" alt="">
     </a>
   </div>
   </div>

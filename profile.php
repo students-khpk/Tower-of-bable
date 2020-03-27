@@ -2,22 +2,15 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/bootstrap.css" >
+  <title>Мой профиль</title>
+    <?php
+        include 'head.php';
+    ?>
 </head>
 <body>
 
-<style>
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-  }
-</style>
-
 <?php
-include 'header.php';
+    include 'header.php';
 ?>
 
 <div class="container">
@@ -62,17 +55,17 @@ include 'header.php';
 
         <div class="d-flex flex-column">
           <h4 class="text-center mb-3">Статистика</h4>
-          <p><input type="checkbox" name="a" value="1"> Сыграно матчей:---</p>
-          <p><input type="checkbox" name="b" value="2"> Выиграно матчей:---</p>
-          <p><input type="checkbox" name="c" value="3"> Этажей уничтожено:---</p>
-          <p><input type="checkbox" name="d" value="4"> Этажей построено:---</p>
-          <p><input type="checkbox" name="e" value="5"> Укреплений создано:---</p>
+          <p><input type="checkbox" name="a" value="1"> Сыграно матчей: ---</p>
+          <p><input type="checkbox" name="b" value="2"> Выиграно матчей: ---</p>
+          <p><input type="checkbox" name="c" value="3"> Этажей уничтожено: ---</p>
+          <p><input type="checkbox" name="d" value="4"> Этажей построено: ---</p>
+          <p><input type="checkbox" name="e" value="5"> Укреплений создано: ---</p>
         </div>
   </div>
 </div>
 
 <?php
-include 'footer.php';
+    include 'footer.php';
 ?>
 
 </body>
