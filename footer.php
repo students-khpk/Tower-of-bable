@@ -1,14 +1,4 @@
-<style>
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background: #484848;
-  }
-</style>
-
-<footer class="footer py-2">
+<footer class="py-2 fixed-bottom" style="background: #484848;">
 
     <div class="container">
       <a class="navbar-brand" href="#">

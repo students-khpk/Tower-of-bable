@@ -12,7 +12,7 @@
   }
 </style>
 
-<header class="mb-5 header">
+<header class="mb-5 header sticky-top">
 <nav class="navbar navbar-expand-lg navbar-light bd-highlight">
   <div class="container">
    <a class="navbar-brand" href="/">
