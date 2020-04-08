@@ -27,7 +27,7 @@
 
 		setcookie('user', $user[0]['nickname'], time() + 3600, "/");
 
-		header("Location: /register.php");
+		header("Location: ../register.php");
 	} else {
 		echo 'Пароли не совпадают!';
 		die();
