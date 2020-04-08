@@ -41,9 +41,16 @@
         Мои достижения</a>
       </li>
     </ul>
-    <a class="navbar-brand" href="../profile.php">Мой профиль
-      <img src="../img/profile-icon-white.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    </a>
+    <?php
+      if ($_COOKIE['user'] == ''):
+    ?>
+      <a class="navbar-brand" href="../auth/auth.php">Вход / Регистрация</a>
+    <?php else: ?>
+      <a class="navbar-brand" href="../profile.php"><?=$_COOKIE['user']?>
+        <img src="../img/profile-icon-white.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+      <a class="navbar-brand" href="auth/logout.php">Выход</a>
+    <?php endif; ?>
   </div>
   </div>
 </nav>
