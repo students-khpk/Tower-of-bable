@@ -8,25 +8,40 @@
 	?>
 </head>
 <body>
-	<?php 
+	<?php
+		include '../header.php';
 		require_once 'connect_db.php';
 		if ($_COOKIE['user'] == ''):
 	?>
-	<form method="post" action="action_register.php">
-		<h1>Регистрация</h1>
-		<label>Никнейм</label><br>
-			<input type="text" name="nickname"><br>
-		<label>Логин</label><br>
-			<input type="text" name="login"><br>
-		<label>Пароль</label><br>
-			<input type="text" name="password"><br>
-		<label>Повторите пароль</label><br>
-			<input type="text" name="confirm-password"><br>
-		<input type="submit" value="Зарегистрироваться"><br>
-		<a href="auth.php">Вернуться к авторизации</a>
-	</form>
+	<div class="container">
+		<form method="post" action="action_register.php">
+			<h1 class="text-center">Регистрация</h1>
+			<div class="form-group">
+				<label>Никнейм:</label>
+				<input type="text" class="form-control" name="nickname" placeholder="Введите никнейм">
+			</div>
+			<div class="form-group">
+				<label>Логин:</label>
+				<input type="text" class="form-control" name="login" placeholder="Введите логин">
+			</div>
+			<div class="form-group">
+				<label>Пароль:</label>
+				<input type="text" class="form-control" name="password" placeholder="Введите пароль">
+			</div>
+			<div class="form-group">
+				<label>Повторите пароль:</label>
+				<input type="text" class="form-control" name="confirm-password" placeholder="Повторите пароль">
+			</div>
+			<div class="form-inline">
+				<input type="submit" class="btn btn-primary" value="Зарегистрироваться">
+				<a href="auth.php" style="margin-left: 10px;">Вернуться к авторизации</a>
+			</div>
+		</form>
+	</div>
 	<?php else: ?>
-		<p>Привет, <?=$_COOKIE['user']?>. Чтобы выйти нажмите <a href="logout.php">здесь</a></p>
-	<?php endif;?>
+		<p>Привет, <?=$_COOKIE['user']?>. Чтобы выйти нажмите<a href="logout.php"> здесь</a></p>
+	<?php endif;
+		include '../footer.php';
+	?>
 </body>
 </html>

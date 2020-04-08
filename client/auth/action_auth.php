@@ -16,4 +16,4 @@
 
 	setcookie('user', $user[0]['nickname'], time() + 3600, "/");
 
-	header("Location: ../auth.php");
+	header("Location: auth.php");

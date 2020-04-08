@@ -8,16 +8,6 @@
 	?>
 </head>
 <body>
-	<style>
-		form {
-		  width: 500px;
-		  margin: 0 auto;
-		  padding: 40px;
-		  background: #fff;
-		  border-radius: 10px;
-		  border: 1px solid #8d705a;
-		}
-	</style>
 	<?php
 		include '../header.php';
 		require_once 'connect_db.php';
