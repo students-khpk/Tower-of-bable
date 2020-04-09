@@ -20,7 +20,7 @@
       <div class="profile mb-4">
         <h1 href="#">
           <img src="img/profile-icon.png" width="180" height="180" class="d-inline-block align-top" alt="">
-          Ваше имя
+          <?=$_COOKIE['user']?>
         </h1>
         <p>Ваш статус</p>
       </div>
@@ -55,11 +55,11 @@
 
         <div class="d-flex flex-column">
           <h4 class="text-center mb-3">Статистика</h4>
-          <p><input type="checkbox" name="a" value="1"> Сыграно матчей: ---</p>
-          <p><input type="checkbox" name="b" value="2"> Выиграно матчей: ---</p>
-          <p><input type="checkbox" name="c" value="3"> Этажей уничтожено: ---</p>
-          <p><input type="checkbox" name="d" value="4"> Этажей построено: ---</p>
-          <p><input type="checkbox" name="e" value="5"> Укреплений создано: ---</p>
+          <p><img src="img/statistics-icon.png" width="15" alt=""> Сыграно матчей: ---</p>
+          <p><img src="img/statistics-icon.png" width="15" alt=""> Выиграно матчей: ---</p>
+          <p><img src="img/statistics-icon.png" width="15" alt=""> Этажей уничтожено: ---</p>
+          <p><img src="img/statistics-icon.png" width="15" alt=""> Этажей построено: ---</p>
+          <p><img src="img/statistics-icon.png" width="15" alt=""> Укреплений создано: ---</p>
         </div>
   </div>
 </div>

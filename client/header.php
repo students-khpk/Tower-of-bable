@@ -23,29 +23,35 @@
         <span class="navbar-toggler-icon"></span>
   </button>
   <div id="my-nav" class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/"><img src="../img/nav-icon/home.png" width="12" class="d-inline-block" alt="">
-        Главная <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../rating.php"><img src="../img/nav-icon/rating.png" width="14" class="d-inline-block" alt="">
-        Рейтинг</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../mygame.php"><img src="../img/nav-icon/mygame.png" width="14" class="d-inline-block" alt="">
-        Мои игры</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../achievement.php"><img src="../img/nav-icon/achievement.png" width="10" class="d-inline-block" alt="">
-        Мои достижения</a>
-      </li>
-    </ul>
     <?php
       if ($_COOKIE['user'] == ''):
     ?>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><img src="../img/nav-icon/home.png" width="12" class="d-inline-block" alt="">
+          Главная <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
       <a class="navbar-brand" href="../auth/auth.php">Вход / Регистрация</a>
     <?php else: ?>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><img src="../img/nav-icon/home.png" width="12" class="d-inline-block" alt="">
+          Главная <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../rating.php"><img src="../img/nav-icon/rating.png" width="14" class="d-inline-block" alt="">
+          Рейтинг</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../mygame.php"><img src="../img/nav-icon/mygame.png" width="14" class="d-inline-block" alt="">
+          Мои игры</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../achievement.php"><img src="../img/nav-icon/achievement.png" width="10" class="d-inline-block" alt="">
+          Мои достижения</a>
+        </li>
+      </ul>
       <a class="navbar-brand" href="../profile.php"><?=$_COOKIE['user']?>
         <img src="../img/profile-icon-white.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
