@@ -18,11 +18,11 @@
 			<h1 class="text-center">Авторизация</h1>
 			<div class="form-group">
 				<label>Логин:</label>
-				<input type="text" class="form-control" name="login" placeholder="Введите логин" minlength="6">
+				<input type="text" class="form-control" name="login" placeholder="Введите логин" required minlength="6">
 			</div>
 			<div class="form-group">
 				<label>Пароль:</label>
-				<input type="password" class="form-control" name="password" placeholder="Введите пароль" minlength="6">
+				<input type="password" class="form-control" name="password" placeholder="Введите пароль" required minlength="6">
 			</div>
 			<div class="form-inline">
 				<input type="submit" class="btn btn-primary" value="Войти">
