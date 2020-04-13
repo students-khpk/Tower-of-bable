@@ -10,7 +10,7 @@
 
 		$password = md5($password);
 
-		$register = $pdo->query("INSERT INTO `users`(`nickname`, `login`, `password`) VALUES ('$nickname','$login', '$password')");
+		$register = $pdo->query("INSERT INTO `users`(`nickname`, `login`, `password`, `role`) VALUES ('$nickname','$login', '$password', 'user')");
 
 		if (!$register) {
 			echo 'Ошибка регистрации!';

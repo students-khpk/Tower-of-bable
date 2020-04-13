@@ -1,6 +1,6 @@
 <?php
 	$pdo = new PDO(
-		'mysql:host=localhost;dbname=game_db', 'root', ''
+		'mysql:host=localhost;dbname=tobgame_db', 'root', ''
 	);
 
 	if (!$pdo) {
