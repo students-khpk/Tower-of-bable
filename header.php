@@ -52,10 +52,22 @@
           Мои достижения</a>
         </li>
       </ul>
-      <a class="navbar-brand" href="../profile.php"><?=$_COOKIE['user']?>
+     <!--  <a class="navbar-brand" href="../profile.php"><?=$_COOKIE['user']?>
         <img src="../img/profile-icon-white.png" width="30" height="30" class="d-inline-block align-top" alt="">
       </a>
-      <a class="navbar-brand" href="auth/logout.php">Выход</a>
+      <a class="navbar-brand" href="auth/logout.php">Выход</a> -->
+
+      <ul class="navbar-nav">
+         <li class="nav-item dropdown">
+          <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?=$_COOKIE['user'].' '?><img src="../img/profile-icon-white.png" width="25" height="25" alt="">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="auth/logout.php">Выход</a>
+          </div>
+        </li>
+      </ul>
+
     <?php endif; ?>
   </div>
   </div>
