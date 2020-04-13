@@ -67,8 +67,8 @@
 </div>
 
 <?php
-    include 'footer.php';
     // endif;
+    include 'footer.php'; 
 ?>
 
 </body>
