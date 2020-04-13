@@ -11,8 +11,10 @@
 
 <?php
     include 'header.php';
+    // if ($_COOKIE['user'] == ''):
+    // header("Location: auth.php");
+    // else:
 ?>
-
 <div class="container">
   <div class="d-flex justify-content-around bd-highlight mb-3">
 
@@ -66,6 +68,7 @@
 
 <?php
     include 'footer.php';
+    // endif;
 ?>
 
 </body>
