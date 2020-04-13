@@ -5,6 +5,7 @@
   <title>Мои игры</title>
 	<?php
 		include 'head.php';
+		require_once 'connect_db.php';
 	?>
 </head>
 <body>
