@@ -14,6 +14,6 @@
 		die();
 	}
 
-	setcookie('user', $user[0]['nickname'], time() + 3600, "/");
+	setcookie('user', $user[0]['id'], time() + 3600, "/");
 
 	header("Location: /");

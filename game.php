@@ -13,24 +13,11 @@
 	include 'header.php';
 ?>
 
-<h1 style="text-align: center;">Мои игры</h1>
+<div class="leftPanel" style="background-color: gold;">
+	<h1>Игроки:</h1>
+</div>
 
-<?php
-	include 'footer.php';
-?>
 
 
 </body>
-
-<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-<script>
-
-    var socket = io();
-	
-	socket.on('getCookie',function (data) {
-		console.log(data);
-	});
-	
-</script>
-
 </html>

@@ -15,6 +15,14 @@
 
 <h1 style="text-align: center;">Мои игры</h1>
 
+<?php           
+    $round_user = $pdo->query('SELECT * FROM `rounds`');
+    while ($row = $round_user->fetch()){
+        echo $row;
+    }
+?>
+
+
 <?php
 	include 'footer.php';
 ?>
