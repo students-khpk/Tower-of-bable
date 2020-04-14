@@ -5,7 +5,10 @@
   <title>Мои игры</title>
 	<?php
 		include 'head.php';
-		require_once 'connect_db.php';
+    	require_once 'auth/connect_db.php';
+		
+		$game = $_GET['game'];
+		$player = $_GET['player'];
 	?>
 </head>
 <body>
@@ -13,10 +16,6 @@
 <?php
 	include 'header.php';
 ?>
-
-<div class="leftPanel" style="background-color: gold;">
-	<h1>Игроки:</h1>
-</div>
 
 
 
