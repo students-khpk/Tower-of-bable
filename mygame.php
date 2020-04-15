@@ -15,9 +15,8 @@
 ?>
 
 <div class="d-flex justify-content-around">
-  <form method=post>
-    <input class="btn btn-primary" type=submit name=btn value='Найти игру'>
-  </form>
+  <a href="find_game.php" type="button" class="btn btn-primary">Найти игру</a>
+  <a href="create_game.php" type="button" class="btn btn-primary">Создать игру</a>
 </div>
 
 
@@ -28,7 +27,7 @@
 <?php           
   $round_user = $pdo->query('SELECT * FROM `round_user` WHERE `user_id`='.$_COOKIE['user'].'');
   while ($row = $round_user->fetch()){
-    $round = $pdo->query('SELECT * FROM `rounds` WHERE '.$_COOKIE['user'].'='.$_COOKIE['user'].'');
+    $round = $pdo->query('SELECT * FROM `rounds` WHERE `id`='.$row[2].'');
     while ($row2 = $round->fetch()){
       echo '<div class="col-sm-3">
               <div class="card">
