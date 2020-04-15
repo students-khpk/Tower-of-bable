@@ -26,6 +26,7 @@
 		}
 
 		setcookie('user', $user[0]['id'], time() + 3600, "/");
+		var_dump($user[0]);
 
 		header("Location: /");
 	} else {

@@ -12,7 +12,7 @@
   }
 </style>
 
-<header class="mb-5 header sticky-top">
+<header class="header sticky-top"><!-- mb-5 -->
 <nav class="navbar navbar-expand-lg navbar-light bd-highlight">
   <div class="container">
    <a class="navbar-brand" href="/">
@@ -59,7 +59,7 @@
 
       <ul class="navbar-nav">
          <li class="nav-item dropdown">
-          <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="navbar-brand dropdown-toggle" href="../profile.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?=$_COOKIE['user'].' '?><img src="../img/profile-icon-white.png" width="25" height="25" alt="">
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
