@@ -15,7 +15,7 @@
     // header("Location: auth.php");
     // else:
 ?>
-<div class="container">
+<div class="mt-5 container">
   <div class="d-flex justify-content-around bd-highlight mb-3">
 
     <div class="d-flex flex-column">

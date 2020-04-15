@@ -13,7 +13,7 @@
 		require_once 'connect_db.php';
 		if ($_COOKIE['user'] == ''):
 	?>
-	<div class="container">
+	<div class="mt-5 container">
 		<form class="shadow-lg" method="post" action="action_register.php">
 			<h1 class="text-center">Регистрация</h1>
 			<div class="form-group">

@@ -13,7 +13,7 @@
 	include 'header.php';
 ?>
 
-<div class="container mb-5">
+<div class="mt-2 container">
     <h1 class="kak">Как играть?</h1>
   <div class="d-flex justify-content-around">
   <div class="d-flex flex-column">
