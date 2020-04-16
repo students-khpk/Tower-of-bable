@@ -1,5 +1,6 @@
 <?php
 require_once 'auth/connect_db.php';
+$name = $_POST['name'];
 $max_players = $_POST['max_players'];
 $article = $_POST['score'];
 
@@ -9,7 +10,8 @@ $stmt = $pdo->query('INSERT INTO `rounds`(
                                               `date_end`,
                                               `score`,
                                               `max_players`,
-                                              `owner`
+                                              `owner`,
+                                              `name`
                                               )
                                               VALUES (
                                                "Wait for players",
@@ -17,7 +19,8 @@ $stmt = $pdo->query('INSERT INTO `rounds`(
                                                "'.date("d F Y ").'",
                                                "'.$article.'",
                                                "'.$max_players.'",
-                                               "'.$_COOKIE['user'].'"
+                                               "'.$_COOKIE['user'].'",
+                                               "'.$name.'"
                                               )');
 $game = $pdo->lastInsertId();
 $stmt2 = $pdo->query('INSERT INTO `round_user`(
@@ -26,7 +29,8 @@ $stmt2 = $pdo->query('INSERT INTO `round_user`(
                                               `blocks`,
                                               `roof`,
                                               `floor`,
-                                              `floor_fix`
+                                              `floor_fix`,
+                                              `shells`
                                               )
                                               VALUES (
                                                "'.$_COOKIE['user'].'",
@@ -34,6 +38,7 @@ $stmt2 = $pdo->query('INSERT INTO `round_user`(
                                                "100",
                                                "0",
                                                "4",
+                                               "1",
                                                "1"
                                               )');
 header('Location: /game.php?game='.$game.'&player='.$_COOKIE['user'].'');

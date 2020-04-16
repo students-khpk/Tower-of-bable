@@ -22,8 +22,9 @@
   <thead>
     <tr>
       <th scope="col">Номер</th>
+      <th scope="col">Название</th>
       <th scope="col">Игроки</th>
-      <th scope="col">Количество этажей для победы</th>
+      <th scope="col">Этажей для победы</th>
       <th scope="col">Операции</th>
     </tr>
   </thead>
@@ -43,9 +44,10 @@
     if ($user_on == false) {
       echo '<tr>
               <th scope="row">'.$row[0].'</th>
+              <th scope="row">'.$row[7].'</th>
               <td>'.$players.'/'.$row[5].'</td>
               <td>'.$row[4].'</td>
-              <td><a class="btn btn-primary" href="">Подключится</a></td>
+              <td><a class="btn btn-primary" href="find_game_second.php?game='.$row[0].'">Подключится</a></td>
             </tr>';
     }
   }
