@@ -5,7 +5,7 @@
   <title>Мои игры</title>
 	<?php
 		include 'head.php';
-    	require_once 'auth/connect_db.php';
+    	require_once 'auth/inquiries.php';
 		
 		$game = $_GET['game'];
 		$player = $_GET['player'];
@@ -166,11 +166,11 @@
 			<div class="bs h2"><h2>Чат</h2></div>
 			<div class="p-2">
 				<div class="d-flex flex-column align-items-start bd-highlight">
-				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$_COOKIE['user'].': '.'Всем ку'?></a></div>
-				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$_COOKIE['user'].': '.'Вечер в хату'?></a></div>
-				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$_COOKIE['user'].': '.'Привет!'?></a></div>
-				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$_COOKIE['user'].': '.'Когда начало?'?></a></div>
-				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$_COOKIE['user'].': '.'Хз'?></a></div>
+				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$nickname.': '.'Всем ку'?></a></div>
+				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$nickname.': '.'Вечер в хату'?></a></div>
+				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$nickname.': '.'Привет!'?></a></div>
+				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$nickname.': '.'Когда начало?'?></a></div>
+				  <div class="p-2 bd-highlight"><a class="navbar-brand" href="../profile.php"><img src="../img/profile-icon.png" width="30" height="30" class="d-inline-block align-top" alt=""><?=' '.$nickname.': '.'Хз'?></a></div>
 				</div>
 				<div style="position: absolute; bottom: 5px;">
 					<input type="text" size="25" style="margin-bottom: 10px;">
