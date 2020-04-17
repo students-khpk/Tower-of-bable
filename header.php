@@ -1,5 +1,4 @@
 <?php
-  include 'head.php';
   require_once 'auth/inquiries.php';
 ?>
 
