@@ -10,24 +10,23 @@
 		$game = $_GET['game'];
 		$player = $_GET['player'];
 
-		$id = $_COOKIE['user'];
+		
     	$user = $pdo->query('SELECT * FROM users WHERE id = '.$player.'');
     	$floor = 0;
     	$floor_fix = 0;
     	$bricks = 0;
     	$shells = 0;
     	$roof = 0;
-    	while ($row_user = $user->fetch()){
-    		$user2 = $pdo->query('SELECT * FROM `round_user` WHERE `user_id`='.$row_user[0].'');
-			while ($row_user2 = $user2->fetch()){
-				$floor = $row_user2[5];
-		    	$floor_fix = $row_user2[6];
-		    	$bricks = $row_user2[3];
-		    	$shells = $row_user2[7];
-		    	$roof = $row_user2[4];
-			}
-  		}
+		$user2 = $pdo->query('SELECT * FROM `round_user` WHERE `user_id`='.$player.' AND `round_id` = '.$game.'');
+		while ($row_user2 = $user2->fetch()){
+			$floor = $row_user2[5];
+	    	$floor_fix = $row_user2[6];
+	    	$bricks = $row_user2[3];
+	    	$shells = $row_user2[7];
+	    	$roof = $row_user2[4];
+		}
 
+		$id = $_COOKIE['user'];
   		$user_cookie = $pdo->query('SELECT * FROM users WHERE id = '.$id.'');
     	$floor_cookie = 0;
     	$floor_fix_cookie = 0;
@@ -35,7 +34,7 @@
     	$shells_cookie = 0;
     	$roof_cookie = 0;
     	while ($row_user_cookie = $user_cookie->fetch()){
-    		$user2_cookie = $pdo->query('SELECT * FROM `round_user` WHERE `user_id`='.$row_user_cookie[0].'');
+    		$user2_cookie = $pdo->query('SELECT * FROM `round_user` WHERE `user_id`='.$row_user_cookie[0].' AND `round_id` = '.$game.'');
 			while ($row_user2_cookie = $user2_cookie->fetch()){
 				$floor_cookie = $row_user2_cookie[5];
 		    	$floor_fix_cookie = $row_user2_cookie[6];
@@ -112,7 +111,7 @@
 			<div class="p-2">
 			<div class="d-flex flex-column align-items-start bd-highlight" style="overflow-y: scroll; height: 80vh;">
 			<?php
-				$round_user = $pdo->query('SELECT * FROM `round_user` WHERE `round_id`='.$game.'');
+				$round_user = $pdo->query('SELECT * FROM `round_user` WHERE `round_id`='.$game.' ORDER BY `id`');
   				while ($row = $round_user->fetch()){
   					$users = $pdo->query('SELECT * FROM `users` WHERE `id` = '.$row[1].'');
   					while ($row2 = $users->fetch()){
@@ -135,8 +134,10 @@
 				 <div class="d-flex flex-row">
 					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/1.png" width="20" alt=""><?php echo 'Этажи: '.$floor.'' ?></a></div>
 					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/2.png" width="20" alt=""><?php echo 'Укрепленные этажи: '.$floor_fix.'' ?></a></div>
-					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/3.png" width="20" alt=""><?php echo 'Снаряды: '.$shells.'' ?></a></div>
-					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/4.png" width="20" alt=""><?php echo 'Кирпичи: '.$bricks.'' ?></a></div>
+					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/3.png" width="20" alt=""><?php echo 'Снаряды: '.$shells.' ' ?></a></div>
+					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/4.png" width="20" alt=""><?php
+					  	$plus = ($floor-$floor_fix) * 10;
+					   echo 'Кирпичи: '.$bricks.' + '.$plus.'' ?></a></div>
 				</div>
 			</div>
 			<div class="nav-game bs">
@@ -145,16 +146,16 @@
 						if ($player == $id) {
 							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=build">Построить этаж</a></div>';
 							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Защитить этаж</a></div>';
-							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Купить снаряд</a></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=buy">Купить снаряд</a></div>';
 							if (!$roof) {
-								echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Поставить крышу</a></div>';
+								echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=floor_1">Поставить крышу</a></div>';
 							} else {
-								echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Убрать крышу</a></div>';
+								echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=floor_0">Убрать крышу</a></div>';
 							}
 						} else {
 							echo '<div class="p-2"><p style="margin: 0px;">Снаряды: '.$shells_cookie.'</p></div>';
-							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Атаковать</a></div>';
-							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Вернуться</a></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=attack">Атаковать</a></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$id.'&actor=upgrate">Вернуться</a></div>';
 						}
 					?>
 				</div>
@@ -180,4 +181,8 @@
 	</div>
 </div>
 </body>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/math.js"></script>
+    <script src="js/game.js"></script>
+
 </html>
