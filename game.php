@@ -132,8 +132,8 @@
 		<div class="d-flex flex-column">
 			<div class="nav-game bs">
 				 <div class="d-flex flex-row">
-					  <div class="p-2"><a href="#" id="floor" class="link-game"><img src="../img/game-content/1.png" width="20" alt=""><?php echo 'Этажи: '.$floor.'' ?></a></div>
-					  <div class="p-2"><a href="#" id="floor_fix" class="link-game"><img src="../img/game-content/2.png" width="20" alt=""><?php echo 'Укрепленные этажи: '.$floor_fix.'' ?></a></div>
+					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/1.png" width="20" alt=""><?php echo 'Этажи: '.$floor.'' ?></a></div>
+					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/2.png" width="20" alt=""><?php echo 'Укрепленные этажи: '.$floor_fix.'' ?></a></div>
 					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/3.png" width="20" alt=""><?php echo 'Снаряды: '.$shells.' ' ?></a></div>
 					  <div class="p-2"><a href="#" class="link-game"><img src="../img/game-content/4.png" width="20" alt=""><?php
 					  	$plus = ($floor-$floor_fix) * 10;

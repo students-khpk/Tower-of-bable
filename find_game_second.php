@@ -20,5 +20,4 @@ $stmt = $pdo->query('INSERT INTO `round_user`(
                                                "1",
                                                "1"
                                               )');
-echo $pdo->lastInsertId();
-//header('Location: /game.php?game='.$game.'&player='.$_COOKIE['user'].'');
+header('Location: /game.php?game='.$game.'&player='.$_COOKIE['user'].'');
