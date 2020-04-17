@@ -11,7 +11,7 @@
 		$player = $_GET['player'];
 
 		$id = $_COOKIE['user'];
-    	$user = $pdo->query('SELECT * FROM users WHERE id = '.$id.'');
+    	$user = $pdo->query('SELECT * FROM users WHERE id = '.$player.'');
     	$floor = 0;
     	$floor_fix = 0;
     	$bricks = 0;
@@ -25,6 +25,23 @@
 		    	$bricks = $row_user2[3];
 		    	$shells = $row_user2[7];
 		    	$roof = $row_user2[4];
+			}
+  		}
+
+  		$user_cookie = $pdo->query('SELECT * FROM users WHERE id = '.$id.'');
+    	$floor_cookie = 0;
+    	$floor_fix_cookie = 0;
+    	$bricks_cookie = 0;
+    	$shells_cookie = 0;
+    	$roof_cookie = 0;
+    	while ($row_user_cookie = $user_cookie->fetch()){
+    		$user2_cookie = $pdo->query('SELECT * FROM `round_user` WHERE `user_id`='.$row_user_cookie[0].'');
+			while ($row_user2_cookie = $user2_cookie->fetch()){
+				$floor_cookie = $row_user2_cookie[5];
+		    	$floor_fix_cookie = $row_user2_cookie[6];
+		    	$bricks_cookie = $row_user2_cookie[3];
+		    	$shells_cookie = $row_user2_cookie[7];
+		    	$roof_cookie = $row_user2_cookie[4];
 			}
   		}
 	?>
@@ -101,6 +118,7 @@
   					while ($row2 = $users->fetch()){
   						echo '<div class="p-2 bd-highlight">
   						<a class="navbar-brand" href="../game.php?game='.$game.'&player='.$row[1].'">'.$row2[1].'</a>
+  						<p>Этажи: '.$row[5].'</p>
   						</div>';
   					}
   				}
@@ -124,7 +142,21 @@
 			<div class="nav-game bs">
 				<div class="d-flex flex-row">
 					<?php
-						echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=build">Построить этаж</a></div>';
+						if ($player == $id) {
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=build">Построить этаж</a></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Защитить этаж</a></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Купить снаряд</a></div>';
+							if (!$roof) {
+								echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Поставить крышу</a></div>';
+							} else {
+								echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Убрать крышу</a></div>';
+							}
+						} else {
+							echo '<div class="p-2"><p style="margin: 0px;">Снаряды: '.$shells_cookie.'</p></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Атаковать</a></div>';
+							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Вернуться</a></div>';
+						}
+						
 					?>
 				</div>
 			</div>
