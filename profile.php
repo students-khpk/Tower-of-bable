@@ -29,7 +29,7 @@
       </div>
       <div class="p-4 bg-profile">
         <h4 class="text-center">Ваши последние матчи:</h4>
-        <table class="table table-sm table-borderless">
+        <table class="table table-sm table-borderless" style="color: #fff;">
           <thead>
             <tr>
               <th scope="col">Дата</th>
