@@ -5,6 +5,7 @@
 	<title>Авторизация</title>
 	<?php
 		include '../head.php';
+		require_once 'inquiries.php';
 	?>
 </head>
 <body>
@@ -31,7 +32,7 @@
 		</form>
 	</div>
 	<?php else: ?>
-		<p>Привет, <?=$_COOKIE['user']?>. Чтобы выйти нажмите<a href="logout.php"> здесь</a></p>
+		<p>Привет, <?=$nickname?>. Чтобы выйти нажмите<a href="logout.php"> здесь</a></p>
 	<?php endif;
 		include '../footer.php';
 	?>

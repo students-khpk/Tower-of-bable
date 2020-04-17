@@ -5,6 +5,7 @@
   <title>Мой профиль</title>
     <?php
         include 'head.php';
+        require_once 'auth/inquiries.php';
     ?>
 </head>
 <body>
@@ -22,7 +23,7 @@
       <div class="profile mb-4">
         <h1 href="#">
           <img src="img/profile-icon.png" width="180" height="180" class="d-inline-block align-top" alt="">
-          <?=$_COOKIE['user']?>
+          <?=$nickname?>
         </h1>
         <p>Ваш статус</p>
       </div>

@@ -1,16 +1,7 @@
-<style>
-  .header {
-    background: #8d705a;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    border-radius: 0px 0px 10px 10px;
-  }
-  .navbar-light .navbar-brand {
-    color: rgba(255, 255, 255, 1);
-  }
-  .navbar-light .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 1);
-  }
-</style>
+<?php
+  include 'head.php';
+  require_once 'auth/inquiries.php';
+?>
 
 <header class="header sticky-top"><!-- mb-5 -->
 <nav class="navbar navbar-expand-lg navbar-light bd-highlight">
@@ -60,7 +51,7 @@
       <ul class="navbar-nav">
          <li class="nav-item dropdown">
           <a class="navbar-brand dropdown-toggle" href="../profile.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <?=$_COOKIE['user'].' '?><img src="../img/profile-icon-white.png" width="25" height="25" alt="">
+            <?=$nickname.' '?><img src="../img/profile-icon-white.png" width="25" height="25" alt="">
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="auth/logout.php">Выход</a>
