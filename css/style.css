@@ -10,6 +10,10 @@ form {
 	border-radius: 10px;
 }
 
+.bg-profile {
+	background: #8d705a; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
 .header {
 	background: #8d705a;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);

@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 13 2020 г., 13:28
--- Версия сервера: 5.7.25
+-- Время создания: Апр 17 2020 г., 13:38
+-- Версия сервера: 8.0.15
 -- Версия PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -45,9 +45,25 @@ CREATE TABLE `logs` (
 
 CREATE TABLE `rounds` (
   `id` int(11) NOT NULL,
-  `round` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL
+  `status` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_start` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_end` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `score` int(11) NOT NULL,
+  `max_players` int(11) NOT NULL,
+  `owner` int(11) NOT NULL,
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `rounds`
+--
+
+INSERT INTO `rounds` (`id`, `status`, `date_start`, `date_end`, `score`, `max_players`, `owner`, `name`) VALUES
+(6, 'Wait for players', '15 April 2020 ', '15 April 2020 ', 10000, 25, 1, ''),
+(7, 'Wait for players', '15 April 2020 ', '15 April 2020 ', 10000, 25, 1, ''),
+(8, 'Wait for players', '15 April 2020 ', '15 April 2020 ', 10000, 25, 1, ''),
+(9, 'Wait for players', '15 April 2020 ', '15 April 2020 ', 10000, 25, 1, 'вапвап'),
+(10, 'Wait for players', '17 April 2020 ', '17 April 2020 ', 1000, 25, 1, 'Room456');
 
 -- --------------------------------------------------------
 
@@ -59,12 +75,24 @@ CREATE TABLE `round_user` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `round_id` int(11) NOT NULL,
-  `blocks` int(11) NOT NULL,
+  `bricks` int(11) NOT NULL,
   `roof` int(11) NOT NULL,
-  `flats` int(11) NOT NULL,
-  `flat_fix` int(11) NOT NULL,
-  `percent_part` int(11) NOT NULL
+  `floor` int(11) NOT NULL,
+  `floor_fix` int(11) NOT NULL,
+  `shells` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `round_user`
+--
+
+INSERT INTO `round_user` (`id`, `user_id`, `round_id`, `bricks`, `roof`, `floor`, `floor_fix`, `shells`) VALUES
+(3, 1, 6, 100, 0, 120, 1, 0),
+(4, 1, 7, 100, 0, 120, 1, 0),
+(5, 1, 8, 100, 0, 120, 1, 0),
+(9, 1, 9, 100, 0, 120, 1, 1),
+(10, 2, 9, 120, 1, 20, 15, 100),
+(11, 1, 10, 100, 0, 125, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -74,12 +102,19 @@ CREATE TABLE `round_user` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `nickname` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `login` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `photo` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+  `nickname` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `login` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `nickname`, `login`, `password`, `role`) VALUES
+(1, 'testerer', 'testerer', 'f5bb0c8de146c67b44babbf4e6584cc0', 'user'),
+(2, 'testerer2', 'testerer2', 'f5bb0c8de146c67b44babbf4e6584cc0', 'user');
 
 --
 -- Индексы сохранённых таблиц
@@ -128,19 +163,19 @@ ALTER TABLE `logs`
 -- AUTO_INCREMENT для таблицы `rounds`
 --
 ALTER TABLE `rounds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `round_user`
 --
 ALTER TABLE `round_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

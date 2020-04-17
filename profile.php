@@ -17,17 +17,18 @@
     // else:
 ?>
 <div class="mt-5 container">
-  <div class="d-flex justify-content-around bd-highlight mb-3">
+  <div class="d-flex justify-content-around bd-highlight mb-3" style="color: #fff;">
 
     <div class="d-flex flex-column">
-      <div class="profile mb-4">
+      <div class="profile mb-3 p-4 bg-profile">
         <h1 href="#">
-          <img src="img/profile-icon.png" width="180" height="180" class="d-inline-block align-top" alt="">
+          <img src="img/profile-icon-white.png" width="180" height="180" class="d-inline-block align-top" alt="">
           <?=$nickname?>
         </h1>
         <p>Ваш статус</p>
       </div>
-        <h4 class="text-center">Ваши последние матчи</h4>
+      <div class="p-4 bg-profile">
+        <h4 class="text-center">Ваши последние матчи:</h4>
         <table class="table table-sm table-borderless">
           <thead>
             <tr>
@@ -54,10 +55,11 @@
             </tr>
           </tbody>
         </table>
+        </div>
     </div>
 
-        <div class="d-flex flex-column">
-          <h4 class="text-center mb-3">Статистика</h4>
+        <div class="d-flex flex-column p-4 bg-profile" style="height: 100%;">
+          <h4 class="text-center mb-3">Статистика:</h4>
           <p><img src="img/statistics-icon.png" width="15" alt=""> Сыграно матчей: ---</p>
           <p><img src="img/statistics-icon.png" width="15" alt=""> Выиграно матчей: ---</p>
           <p><img src="img/statistics-icon.png" width="15" alt=""> Этажей уничтожено: ---</p>
