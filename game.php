@@ -156,7 +156,6 @@
 							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Атаковать</a></div>';
 							echo '<div class="p-2"><a class="" href="game_second.php?game='.$game.'&player='.$player.'&actor=upgrate">Вернуться</a></div>';
 						}
-						
 					?>
 				</div>
 			</div>

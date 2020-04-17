@@ -2,10 +2,10 @@
 require_once 'auth/connect_db.php';
 $game = $_GET['game'];
 
-$stmt2 = $pdo->query('INSERT INTO `round_user`(
+$stmt = $pdo->query('INSERT INTO `round_user`(
                                               `user_id`,
                                               `round_id`,
-                                              `blocks`,
+                                              `bricks`,
                                               `roof`,
                                               `floor`,
                                               `floor_fix`,
@@ -20,4 +20,5 @@ $stmt2 = $pdo->query('INSERT INTO `round_user`(
                                                "1",
                                                "1"
                                               )');
-header('Location: /game.php?game='.$game.'&player='.$_COOKIE['user'].'');
+echo $pdo->lastInsertId();
+//header('Location: /game.php?game='.$game.'&player='.$_COOKIE['user'].'');

@@ -26,7 +26,7 @@ $game = $pdo->lastInsertId();
 $stmt2 = $pdo->query('INSERT INTO `round_user`(
                                               `user_id`,
                                               `round_id`,
-                                              `blocks`,
+                                              `bricks`,
                                               `roof`,
                                               `floor`,
                                               `floor_fix`,
